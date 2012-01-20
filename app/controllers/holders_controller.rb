@@ -1,42 +1,4 @@
 class HoldersController < ApplicationController
-  # GET /holders
-  # GET /holders.json
-  def index
-    @holders = Holder.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @holders }
-    end
-  end
-
-  # GET /holders/1
-  # GET /holders/1.json
-  def show
-    @holder = Holder.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @holder }
-    end
-  end
-
-  # GET /holders/new
-  # GET /holders/new.json
-  def new
-    @holder = Holder.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @holder }
-    end
-  end
-
-  # GET /holders/1/edit
-  def edit
-    @holder = Holder.find(params[:id])
-  end
-
   # POST /holders
   # POST /holders.json
   def create
@@ -66,18 +28,6 @@ class HoldersController < ApplicationController
         format.html { render action: "edit" }
         format.json { render json: @holder.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /holders/1
-  # DELETE /holders/1.json
-  def destroy
-    @holder = Holder.find(params[:id])
-    @holder.destroy
-
-    respond_to do |format|
-      format.html { redirect_to holders_url }
-      format.json { head :no_content }
     end
   end
 end
