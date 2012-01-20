@@ -1,0 +1,33 @@
+<h1>Listing holders</h1>
+
+<table>
+  <tr>
+    <th>Tin</th>
+    <th>Name</th>
+    <th>Recipe title</th>
+    <th>Recipe text</th>
+    <th>Pic uid</th>
+    <th>Ip</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @holders.each do |holder| %>
+  <tr>
+    <td><%= holder.tin %></td>
+    <td><%= holder.name %></td>
+    <td><%= holder.recipe_title %></td>
+    <td><%= holder.recipe_text %></td>
+    <td><%= holder.pic_uid %></td>
+    <td><%= holder.ip %></td>
+    <td><%= link_to 'Show', holder %></td>
+    <td><%= link_to 'Edit', edit_holder_path(holder) %></td>
+    <td><%= link_to 'Destroy', holder, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Holder', new_holder_path %>

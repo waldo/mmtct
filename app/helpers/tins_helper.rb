@@ -1,0 +1,2 @@
+module TinsHelper
+end
