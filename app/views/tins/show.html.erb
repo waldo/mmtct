@@ -1,17 +1,29 @@
 <div class="sixteen columns">
   <h1 class="remove-bottom" style="margin-top: 40px">My Magic Travelling Cake Tin</h1>
   <hr />
-  <h2>So you're the latest recipient of cake tin 2fkejf. Here's what to do:</h2>
-  <ol>
-    <li>Bake something and put it in the tin</li>
-    <li>Add details of what you made below</li>
-    <li>Pass the cake tin on</li>
-  </ol>
-
-  <%= render "holders/form" %>
-
+  <h2>So you're the latest recipient of cake tin **TO DO**. Here's what to do:</h2>
+</div>
+<div class="row">
+  <div class="one column alpha"><br /></div>
+  <div class="four columns">
+  <h4>
+  <strong>
+    <br />
+    <ol>
+      <li>Bake something and put it in the tin</li>
+      <li>Add details of what you made</li>
+      <li>Pass the cake tin on</li>
+    </ol>
+  </strong>
+  </h4>
+  </div>
+  <div class="one column"><br /></div>
+  <div class="ten columns omega">
+    <%= render "holders/form" %>
+  </div>
+</div>
+<div class="sixteen columns">
   <h2>History of the cake tin</h2>
-
 </div>
 
 <% @tin.holders.each do |h| %>

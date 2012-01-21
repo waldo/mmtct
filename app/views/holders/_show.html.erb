@@ -8,12 +8,12 @@
 </div>
 
 <div class="row">
-  <div class="four columns">
+  <div class="five columns alpha">
     <p><%= image_tag holder.pic.process(:greyscale).thumb('200x120#').url if holder.pic %></p>
   </div>
-  <div class="eleven columns">
+  <div class="eleven columns omega">
     <p>
-      <%= holder.recipe_text %>
+      <%= holder.recipe_text.gsub("\n", "<br />").html_safe %>
     </p>
   </div>
 </div>

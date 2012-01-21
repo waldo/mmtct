@@ -11,23 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
+   <div class="four columns alpha">
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :recipe_title, "What you made" %><br />
+  <div class="six columns omega">
+    <%= f.label :recipe_title, "What you made" %>
     <%= f.text_field :recipe_title %>
   </div>
-  <div class="field">
-    <%= f.label :pic %><br />
-    <%= f.file_field :pic %>
-  </div>
-  <div class="field">
-    <%= f.label :recipe_text, "Recipe" %><br />
-    <%= f.text_area :recipe_text %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Save" %>
-  </div>
+  <br class="clear" />
+  
+  <%= f.label :pic %>
+  <%= f.file_field :pic %>
+  <%= f.label :recipe_text, "Recipe" %>
+  <%= f.text_area :recipe_text, :rows => 8 %>
+  <%= f.submit "Save" %>
 <% end %>
