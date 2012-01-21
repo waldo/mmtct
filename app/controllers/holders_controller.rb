@@ -1,32 +1,28 @@
 class HoldersController < ApplicationController
-  # POST /holders
-  # POST /holders.json
+  # POST /:tin_code/holders
   def create
     @holder = Holder.new(params[:holder])
+    @holder.tin = Tin.find_by_code(params[:tin_code])
+    @holder.ip = request.remote_ip
 
     respond_to do |format|
       if @holder.save
-        format.html { redirect_to @holder, notice: 'Holder was successfully created.' }
-        format.json { render json: @holder, status: :created, location: @holder }
+        format.html { redirect_to tin_path(@holder.tin.code), notice: 'Mission accomplished - the tin must be passed on soon.' }
       else
-        format.html { render action: "new" }
-        format.json { render json: @holder.errors, status: :unprocessable_entity }
+        format.html { redirect_to tin_path(@holder.tin.code), alert: 'Eep, error.' }
       end
     end
   end
 
   # PUT /holders/1
-  # PUT /holders/1.json
   def update
     @holder = Holder.find(params[:id])
 
     respond_to do |format|
       if @holder.update_attributes(params[:holder])
-        format.html { redirect_to @holder, notice: 'Holder was successfully updated.' }
-        format.json { head :no_content }
+        format.html { redirect_to tin_path(@holder.tin.code), notice: 'Holder was successfully updated.' }
       else
         format.html { render action: "edit" }
-        format.json { render json: @holder.errors, status: :unprocessable_entity }
       end
     end
   end

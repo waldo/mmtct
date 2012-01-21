@@ -1,79 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>My Magic Travelling Cake Tin</title>
-	<meta name="description" content="travelling cake tin recipes">
-	<meta name="author" content="meltingwaldo">
-		
+  <meta charset="utf-8">
+  <title>My Magic Travelling Cake Tin</title>
+  <meta name="description" content="travelling cake tin recipes">
+  <meta name="author" content="meltingwaldo">
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="notice"><%= notice %></div>
   <div class="container">
-    <div class="sixteen columns">
-      <h1 class="remove-bottom" style="margin-top: 40px">My Magic Travelling Cake Tin</h1>
-      <hr />
-      <h2>So you're the latest recipient of cake tin 2fkejf. Here's what to do:</h2>
-      <ol>
-        <li>Bake something and put it in the tin</li>
-        <li>Add details of what you made below</li>
-        <li>Pass the cake tin on</li>
-      </ol>
-
-      <form action="">
-  
-        <label for="name">Your name</label>
-        <input type="text" id="name" />
-        <label for="made">What you made</label>
-        <input type="text" id="made" />
-        <label for="photo">Photo</label>
-        <input type="text" id="photo" />
-        <label for="recipe">Recipe</label>
-        <textarea id="recipe"></textarea>
-
-        <button type="submit">Save</button>
-
-      </form>
-    
-      <h2>History of the cake tin</h2>
-
-    </div>
-    <div class="row">
-      <div class="fourteen columns">
-        <h3>Melissa Tan - Truffles</h3>
-      </div>
-      <div class="one columns">
-        <p>Edit</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="four columns">
-        <p>PIC</p>
-      </div>
-      <div class="eleven columns">
-        <p>
-          INGREDIENTS
-          1 packet rich tea biscuits (with 7 biscuits removed) or 1 packet Marie biscuits (with 1 biscuit removed)
-          2 tbs cocoa
-          1 tin sweetened condensed milk
-          1 cup dessicated coconut, plus more to roll in
-
-          STEPS
-          1. Crush the biscuits into a large bowl.
-          2. Add the cocoa and coconut and stir.
-          3. Add the condensed milk and stir.
-          4. With clean, slightly wet hands, roll the mixture into balls, then roll in coconut.
-          5. Cool in the fridge before serving.
-          </p>
-      </div>
-    </div>
-
-  </div><!-- container -->
-
-<%= yield %>
-
+    <%= yield %>
+  </div>
 </body>
 </html>

@@ -1,10 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="sixteen columns">
+  <h1 class="remove-bottom" style="margin-top: 40px">My Magic Travelling Cake Tin</h1>
+  <hr />
+  <h2>So you're the latest recipient of cake tin 2fkejf. Here's what to do:</h2>
+  <ol>
+    <li>Bake something and put it in the tin</li>
+    <li>Add details of what you made below</li>
+    <li>Pass the cake tin on</li>
+  </ol>
 
-<p>
-  <b>Code:</b>
-  <%= @tin.code %>
-</p>
+  <%= render "holders/form" %>
 
+  <h2>History of the cake tin</h2>
 
-<%= link_to 'Edit', edit_tin_path(@tin) %> |
-<%= link_to 'Back', tins_path %>
+</div>
+
+<% @tin.holders.each do |h| %>
+  <%= render :partial => "holders/show", :locals => { :holder => h } %>
+<% end %>
