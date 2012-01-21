@@ -15,4 +15,5 @@ gem "dragonfly", "~>0.9.10"
 
 group :development do
 	gem "awesome_print"
+	gem "heroku"
 end
