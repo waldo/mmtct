@@ -1,25 +1,27 @@
-<div class="sixteen columns">
-  <h2>So you're the latest recipient of cake tin "<%= @tin.code %>". Here's what to do:</h2>
-</div>
-<div class="row">
-  <div class="one column alpha"><br /></div>
-  <div class="four columns">
-  <h4>
-  <strong>
-    <br />
-    <ol>
-      <li>Bake something and put it in the tin</li>
-      <li>Add details of what you made</li>
-      <li>Pass the cake tin on</li>
-    </ol>
-  </strong>
-  </h4>
+<% if notice.nil? %>
+  <div class="sixteen columns">
+    <h2>So you're the latest recipient of cake tin "<%= @tin.code %>". Here's what to do:</h2>
   </div>
-  <div class="one column"><br /></div>
-  <div class="ten columns omega">
-    <%= render "holders/form" %>
+  <div class="row">
+    <div class="one column alpha"><br /></div>
+    <div class="four columns">
+    <h4>
+    <strong>
+      <br />
+      <ol>
+        <li>Bake something and put it in the tin</li>
+        <li>Add details of what you made</li>
+        <li>Pass the cake tin on</li>
+      </ol>
+    </strong>
+    </h4>
+    </div>
+    <div class="one column"><br /></div>
+    <div class="ten columns omega">
+      <%= render "holders/form" %>
+    </div>
   </div>
-</div>
+<% end %>
 <div class="sixteen columns">
   <h2>History of the cake tin</h2>
 </div>
