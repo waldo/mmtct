@@ -12,6 +12,7 @@ end
 gem "jquery-rails"
 gem "rack-cache", :require => "rack/cache"
 gem "dragonfly", "~>0.9.10"
+gem "fog"
 
 group :development do
 	gem "awesome_print"
