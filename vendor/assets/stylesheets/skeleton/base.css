@@ -54,7 +54,7 @@
   body {
     background: #F5F3EB;
     font: normal 14px/23px "Courier New", Courier, Menlo, "Bitstream Vera Sans Mono", Monaco, mono;
-    color: ##60A5A4;
+    color: #60A5A4;
     -webkit-font-smoothing: antialiased; /* Fix for webkit rendering */
     -webkit-text-size-adjust: 100%;
  }
