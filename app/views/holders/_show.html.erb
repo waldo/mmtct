@@ -1,6 +1,6 @@
 <div class="row">
   <div class="fourteen columns">
-    <h3><%= holder.name %> - <%= holder.recipe_title %></h3>
+    <h3><%= holder.name %> - <%= holder.recipe_title %> - <%= holder.created_at.strftime("%e %B %Y") %></h3>
   </div>
   <div class="one columns">
     <p>Edit - TODO</p>
@@ -8,10 +8,10 @@
 </div>
 
 <div class="row">
-  <div class="five columns alpha">
-    <p><%= image_tag holder.pic.process(:greyscale).thumb('200x120#').url if holder.pic %></p>
+  <div class="seven columns alpha">
+    <p><%= image_tag holder.pic.thumb('380x').url if holder.pic %></p>
   </div>
-  <div class="eleven columns omega">
+  <div class="nine columns omega">
     <p>
       <%= holder.recipe_text.gsub("\n", "<br />").html_safe %>
     </p>

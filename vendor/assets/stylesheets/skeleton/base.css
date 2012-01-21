@@ -345,3 +345,15 @@
   .remove-bottom { margin-bottom: 0 !important; }
   .half-bottom { margin-bottom: 10px !important; }
   .add-bottom { margin-bottom: 20px !important; }
+
+
+/* #Image
+================================================== */
+  img {
+    background: white;
+    -moz-box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+    -webkit-box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+    -o-box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+    box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+    padding: 5px;
+  }
