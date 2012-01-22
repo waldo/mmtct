@@ -1,21 +1,36 @@
-  <div class="sixteen columns">
-    <h2>Home, sweet... cake!</h2>
-    <br />
-    <p>
-      Magic Travelling Cake Tins. The perfect gift for anyone who loves to eat, cook or share good food. 
-    </p>
-<!--
-    <p>
-      Curious? Want to start one yourself? Enter your email address and we'll send you more information. 
-      <label for="regularInput">Email address:</label>
-      <input type="text" id="regularInput" />
-      <button type="submit">Send</button>
-    </p>
+<div class="sixteen columns">
+  <h2>Home, sweet... cake!</h2>
+  <br />
+  <p>
+    Magic Travelling Cake Tins. The perfect gift for anyone who loves to eat, cook or share good food. 
+  </p>
 
-    
-    <h2>Already got a tin?</h2>
-      <label for="regularInput">Enter your code here:</label>
-      <input type="text" id="regularInput" />
-      <button type="submit">Go</button>
-  -->
-  </div>
+  <p>
+    Curious? Want to start one yourself? Enter your email address and we'll send you more information. 
+  </p>
+
+  <%= form_for(@email) do |f| %>
+    <% if @email.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@email.errors.count, "error") %> prohibited email address from being sent:</h2>
+
+        <ul>
+        <% @email.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="six columns alpha">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <%= f.submit "Send" %>
+    </div>
+    <div class="ten columns omega">
+      <br />
+    </div>
+    <br class="clear" />
+  <% end %>
+
+</div>
