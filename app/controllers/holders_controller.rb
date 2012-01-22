@@ -2,14 +2,15 @@ class HoldersController < ApplicationController
   # POST /:tin_code/holders
   def create
     @holder = Holder.new(params[:holder])
-    @holder.tin = Tin.find_by_code(params[:tin_code])
+    tin = Tin.find_by_code(params[:tin_code])
+    @holder.tin = tin
     @holder.ip = request.remote_ip
 
     respond_to do |format|
-      if @tin and @holder.save
-        format.html { redirect_to tin_path(@holder.tin.code), notice: "Mission accomplished - the tin must be passed on soon." }
+      if tin and @holder.save
+        format.html { redirect_to tin_path(tin.code), notice: "Mission accomplished - the tin must be passed on soon." }
       else
-        format.html { redirect_to tin_path(@holder.tin.code), alert: "Eep, error." }
+        format.html { redirect_to root_path, alert: "Eep, error." }
       end
     end
   end
