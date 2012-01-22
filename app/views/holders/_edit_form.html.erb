@@ -1,0 +1,20 @@
+<%= form_for(holder, :url => "#{@tin.code}/holders/#{holder.id}", :html => { :multipart => true }) do |f| %>
+   <div class="four columns alpha">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="six columns omega">
+    <%= f.label :recipe_title, "What you made" %>
+    <%= f.text_field :recipe_title %>
+  </div>
+  <br class="clear" />
+
+  <%= f.label :pic %>
+  <% if holder.pic_uid %>
+    <%= image_tag holder.pic.thumb('80x80').url %>
+  <% end %>
+  <%= f.file_field :pic %>
+  <%= f.label :recipe_text, "Recipe" %>
+  <%= f.text_area :recipe_text, :rows => 8 %>
+  <%= f.submit "Save" %>
+<% end %>
