@@ -13,7 +13,7 @@ gem "jquery-rails"
 gem "rack-cache", :require => "rack/cache"
 gem "dragonfly", "~>0.9.10"
 gem "fog"
-
+gem "pony"
 gem "newrelic_rpm"
 
 group :development do

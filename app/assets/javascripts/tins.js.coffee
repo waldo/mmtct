@@ -1,4 +1,4 @@
-jQuery ($) ->
+$ ->
 	$(".hide_me").hide()
 	$("a#edit_holder").click (event) ->
 		event.preventDefault()

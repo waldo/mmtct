@@ -83,6 +83,8 @@ GEM
     nokogiri (1.5.0)
     pg (0.12.2)
     polyglot (0.3.3)
+    pony (1.4)
+      mail (> 2.0)
     rack (1.4.0)
     rack-cache (1.1)
       rack (>= 0.4)
@@ -144,6 +146,7 @@ DEPENDENCIES
   jquery-rails
   newrelic_rpm
   pg
+  pony
   rack-cache
   rails (= 3.2)
   sass-rails (~> 3.2.3)
