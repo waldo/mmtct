@@ -1,9 +1,9 @@
 <% if notice.nil? %>
   <div class="sixteen columns">
     <% unless @is_first_holder %>
-      <h2>Hi <%= @last_holder.recipient_name %>. You're the latest recipient of cake tin codename, "<%= @tin.code %>". Here's what to do:</h2>
+      <h2>Hi <%= @last_holder.recipient_name %>. You're the latest recipient of cake tin codename, "<%= @tin.name %>". Here's what to do:</h2>
     <% else %>
-      <h2>Hi. You're the first holder of cake tin codename, "<%= @tin.code %>". Here's what to do:</h2>
+      <h2>Hi. You're the first holder of cake tin "<%= @tin.name %>". Here's what to do:</h2>
     <% end %>
   </div>
   <div class="row">
