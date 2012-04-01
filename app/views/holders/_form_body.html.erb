@@ -1,0 +1,25 @@
+<div class="ten columns alpha">
+  <%= f.label :recipe_title, "What you made" %>
+  <%= f.text_field :recipe_title %>
+</div>
+<br class="clear" />
+
+<%= f.label :pic, :class => "ten columns alpha" %>
+<%= f.file_field :pic, :class => "ten columns alpha" %>
+<br class="clear" />
+<%= f.label :recipe_text, "Recipe / Story", :class => "ten columns alpha" %>
+<%= f.text_area :recipe_text, :rows => 8, :class => "ten columns alpha" %>
+<br class="clear" />
+
+<h2>Next person</h2>
+<div class="four columns alpha">
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+</div>
+<div class="six columns omega">
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+</div>
+<br class="clear" />
+
+<%= f.submit "Save" %>

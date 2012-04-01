@@ -11,19 +11,5 @@
     </div>
   <% end %>
 
-   <div class="four columns alpha">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <div class="six columns omega">
-    <%= f.label :recipe_title, "What you made" %>
-    <%= f.text_field :recipe_title %>
-  </div>
-  <br class="clear" />
-  
-  <%= f.label :pic %>
-  <%= f.file_field :pic %>
-  <%= f.label :recipe_text, "Recipe" %>
-  <%= f.text_area :recipe_text, :rows => 8 %>
-  <%= f.submit "Save" %>
+  <%= render :partial => "holders/form_body", :locals => { :f => f } %>
 <% end %>

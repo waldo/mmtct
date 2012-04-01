@@ -1,6 +1,6 @@
 <% if notice.nil? %>
   <div class="sixteen columns">
-    <h2>So you're the latest recipient of cake tin "<%= @tin.code %>". Here's what to do:</h2>
+    <h2>Hi <%= @last_holder.name %>. You're the latest recipient of cake tin codename, "<%= @tin.code %>". Here's what to do:</h2>
   </div>
   <div class="row">
     <div class="one column alpha"><br /></div>
@@ -11,7 +11,7 @@
       <ol>
         <li>Bake something and put it in the tin</li>
         <li>Add details of what you made</li>
-        <li>Pass the cake tin on</li>
+        <li>Give the full cake tin to someone lovely</li>
       </ol>
     </strong>
     </h4>
@@ -20,14 +20,14 @@
     <div class="ten columns omega">
       <%= render "holders/form" %>
     </div>
+    <hr />
   </div>
-  <hr>
 <% end %>
 
-<div class="sixteen columns">
+<div class="sixteen columns alpha">
   <h2>History of the cake tin</h2>
 </div>
 
-<% @tin.holders.each do |h| %>
+<% @past_holders.each do |h| %>
   <%= render :partial => "holders/show", :locals => { :holder => h } %>
 <% end %>

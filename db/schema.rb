@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120122121334) do
+ActiveRecord::Schema.define(:version => 20120401171713) do
 
   create_table "emails", :force => true do |t|
     t.string   "email"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(:version => 20120122121334) do
     t.string   "ip"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "email"
   end
 
   add_index "holders", ["tin_id"], :name => "index_holders_on_tin_id"

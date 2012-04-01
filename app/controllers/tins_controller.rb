@@ -6,7 +6,8 @@ class TinsController < ApplicationController
     redirect_to(root_path) and return unless @tin
 
     @holder = Holder.new(:tin => @tin)
-    @past_holders = Holder.all(:conditions => { :tin_id => @tin.id })
+    @past_holders = Holder.all(:conditions => { :tin_id => @tin.id }, :order => "created_at desc")
+    @last_holder = @past_holders.first
 
     respond_to do |format|
       format.html # show.html.erb
