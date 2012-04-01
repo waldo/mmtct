@@ -8,7 +8,7 @@ class HoldersController < ApplicationController
 
     respond_to do |format|
       if tin and @holder.save
-        Pony.mail(:to => "#{ENV['EMAIL_ADMINS']}", :from => "#{ENV['EMAIL_FROM']}", :subject => "A tin has been passed on", :html_body => "<p>Tin: #{tin.code}</p><p>To: #{tin.email}")
+        email_admins("A tin has been passed on", "<p>Tin: #{tin.code}</p><p>From: <#{@holder.name}> #{@holder.email}</p><p>To: <#{@holder.recipient_name}> #{@holder.recipient_email}</p>")
         format.html { redirect_to tin_path(tin.code), notice: "Mission accomplished - the tin must be passed on soon." }
       else
         format.html { redirect_to root_path, alert: "Eep, error." }

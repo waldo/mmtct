@@ -5,9 +5,14 @@ class TinsController < ApplicationController
     @tin = Tin.find_by_code(params[:tin_code])
     redirect_to(root_path) and return unless @tin
 
-    @holder = Holder.new(:tin => @tin)
-    @past_holders = Holder.all(:conditions => { :tin_id => @tin.id }, :order => "created_at desc")
+    @past_holders = Holder.where(:tin_id => @tin.id).order("created_at desc")
     @last_holder = @past_holders.first
+    @is_first_holder = @past_holders.count == 0
+    unless @is_first_holder
+      @holder = Holder.new(:tin => @tin, :email => @last_holder.recipient_email, :name => @last_holder.recipient_name)
+    else
+      @holder = Holder.new(:tin => @tin)
+    end
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,3 +1,5 @@
+<%= render :partial => "holders/first_holder", :locals => { :f => f } if @is_first_holder %>
+
 <div class="ten columns alpha">
   <%= f.label :recipe_title, "What you made" %>
   <%= f.text_field :recipe_title %>
@@ -13,12 +15,12 @@
 
 <h2>Next person</h2>
 <div class="four columns alpha">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.label :recipient_name, "Name" %>
+  <%= f.text_field :recipient_name %>
 </div>
 <div class="six columns omega">
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+  <%= f.label :recipient_email, "Email" %>
+  <%= f.text_field :recipient_email %>
 </div>
 <br class="clear" />
 

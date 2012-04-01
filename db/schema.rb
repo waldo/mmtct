@@ -26,8 +26,10 @@ ActiveRecord::Schema.define(:version => 20120401171713) do
     t.text     "recipe_text"
     t.string   "pic_uid"
     t.string   "ip"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "recipient_email"
+    t.string   "recipient_name"
     t.string   "email"
   end
 
