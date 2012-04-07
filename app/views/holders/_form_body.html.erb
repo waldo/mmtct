@@ -1,27 +1,32 @@
 <%= render :partial => "holders/first_holder", :locals => { :f => f } if @is_first_holder %>
 
-<div class="ten columns alpha">
-  <%= f.label :recipe_title, "What you made" %>
-  <%= f.text_field :recipe_title %>
+<div class="row">
+  <div class="span7">
+    <%= f.text_field :recipe_title, placeholder: "Title", class: "span6" %>
+  </div>
 </div>
-<br class="clear" />
 
-<%= f.label :pic, :class => "ten columns alpha" %>
-<%= f.file_field :pic, :class => "ten columns alpha" %>
-<br class="clear" />
-<%= f.label :recipe_text, "Recipe / Story", :class => "ten columns alpha" %>
-<%= f.text_area :recipe_text, :rows => 8, :class => "ten columns alpha" %>
-<br class="clear" />
+<div class="row">
+  <div class="span7">
+    <%= f.label :pic, "Add a photo", class: "control-label" %>
+    <%= f.file_field :pic, class: "span3" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span7">
+    <%= f.text_area :recipe_text, rows: "8", placeholder: "Recipe / Story", class: "span6" %>
+  </div>
+</div>
 
 <h2>Next person</h2>
-<div class="four columns alpha">
-  <%= f.label :recipient_name, "Name" %>
-  <%= f.text_field :recipient_name %>
+<div class="row">
+  <div class="span3">
+    <%= f.text_field :recipient_name, placeholder: "Name", class: "span3" %>
+  </div>
+  <div class="span3">
+    <%= f.text_field :recipient_email, placeholder: "Email", class: "span3" %>
+  </div>
 </div>
-<div class="six columns omega">
-  <%= f.label :recipient_email, "Email" %>
-  <%= f.text_field :recipient_email %>
-</div>
-<br class="clear" />
 
-<%= f.submit "Save" %>
+<%= f.button "Save", class: "btn btn-primary btn-large" %>

@@ -1,36 +1,32 @@
-<div class="sixteen columns">
-  <h2>Home, sweet... cake!</h2>
-  <br />
+<div class="hero-unit">
+  <h1>Home, sweet... cake!</h1>
   <p>
-    Magic Travelling Cake Tins. The perfect gift for anyone who loves to eat, cook or share good food. 
+    Magic Travelling Cake Tins. The perfect gift for anyone who loves to eat, cook or share good food.
+    Curious? Want to start one yourself? Enter your email address and we'll send you more information.
   </p>
 
-  <p>
-    Curious? Want to start one yourself? Enter your email address and we'll send you more information. 
-  </p>
-
-  <%= form_for(@email) do |f| %>
-    <% if @email.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(@email.errors.count, "error") %> prohibited email address from being sent:</h2>
-
-        <ul>
-        <% @email.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-        </ul>
-      </div>
-    <% end %>
-
-    <div class="six columns alpha">
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-      <%= f.submit "Send" %>
-    </div>
-    <div class="ten columns omega">
-      <br />
-    </div>
-    <br class="clear" />
+  <%= form_for(@email, html: { class: "form-inline" }) do |f| %>
+    <%= f.text_field :email, placeholder: "Email" %>
+    <%= f.button '<i class="icon-envelope icon-white"></i> Send'.html_safe, class: "btn btn-primary btn-large" %>
   <% end %>
+</div>
 
+<div class="row">
+  <div class="span12">
+    <h2>Coming soon</h2>
+    <div class="row">
+      <div class="span4">
+        <h3>Maps</h3>
+        <p>See where in the world your tin is right now.</p>
+      </div>
+      <div class="span4">
+        <h3>Story</h3>
+        <p>Each of our tins has an interesting story to tell.</p>
+      </div>
+      <div class="span4">
+        <h3>Recipes</h3>
+        <p>Great recipes from your friends, and friends of friends of friends...</p>
+      </div>
+    </div>
+  </div>
 </div>

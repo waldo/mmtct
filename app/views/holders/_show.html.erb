@@ -2,11 +2,11 @@
 
 <div id="holder_<%= holder.id %>" class="holder">
   <div class="row">
-    <div class="fourteen columns">
+    <div class="span11">
       <h3>For <%= holder.recipient_name %> made by <%= holder.name %> - <%= holder.recipe_title %> - <%= holder.created_at.strftime("%e %B %Y") %></h3>
     </div>
 
-    <div class="one columns">
+    <div class="span1">
       <% if editable %>
         <p><%= link_to "Edit", root_path, :id => :edit_holder %></p>
       <% end %>
@@ -14,10 +14,18 @@
   </div>
 
   <div class="row">
-    <div class="seven columns alpha">
-      <p><%= image_tag holder.pic.thumb('380x').url if holder.pic %></p>
+    <div class="span5">
+      <% if holder.pic %>
+        <a data-toggle="modal" href="#holder-<%= holder.id %>-pic">
+          <%= image_tag holder.pic.thumb('380x').url %>
+        </a>
+
+      <div class="modal hide" id="holder-<%= holder.id %>-pic">
+        <%= image_tag holder.pic.thumb('556x').url %>
+      </div>
+      <% end %>
     </div>
-    <div class="nine columns omega">
+    <div class="span7">
       <p>
         <%= holder.recipe_text.gsub("\n", "<br />").html_safe %>
       </p>

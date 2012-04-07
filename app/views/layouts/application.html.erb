@@ -1,23 +1,33 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>My Magic Travelling Cake Tin</title>
-  <meta name="description" content="travelling cake tin recipes">
-  <meta name="author" content="meltingwaldo">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="travelling cake tin recipes">
+    <title>My Magic Travelling Cake Tin</title>
+    <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div id="notice"><%= notice %></div>
-  <div class="container">
-    <div class="sixteen columns">
-      <h1 class="remove-bottom" style="margin-top: 40px">My Magic Travelling Cake Tin</h1>
-      <hr />
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+    <![endif]-->
+
+    <%= stylesheet_link_tag "application", :media => "all" %>
+
+    <link href="/favicon.ico" rel="shortcut icon">
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="brand" href="/">My Magic Travelling Cake Tin</a>
+        </div>
+      </div>
     </div>
-    <%= yield %>
-  </div>
-</body>
+
+    <div class="container">
+      <%= yield %>
+
+    </div>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

@@ -1,37 +1,36 @@
 <% if notice.nil? %>
-  <div class="sixteen columns">
-    <% unless @is_first_holder %>
-      <h2>Hi <%= @last_holder.recipient_name %>. You're the latest recipient of cake tin codename, "<%= @tin.name %>". Here's what to do:</h2>
-    <% else %>
-      <h2>Hi. You're the first holder of cake tin "<%= @tin.name %>". Here's what to do:</h2>
-    <% end %>
+  <div class="row">
+    <div class="welcome span12">
+      <% unless @is_first_holder %>
+        <h2>Hi <%= @last_holder.recipient_name %>. You are holding a friendly cake tin codenamed, "<%= @tin.name %>".</h2>
+      <% else %>
+        <h2>Hi. You're the first holder of cake tin "<%= @tin.name %>".</h2>
+      <% end %>
+    </div>
   </div>
   <div class="row">
-    <div class="one column alpha"><br /></div>
-    <div class="four columns">
-    <h4>
-    <strong>
-      <br />
-      <ol>
-        <li>Bake something and put it in the tin</li>
-        <li>Add details of what you made</li>
-        <li>Give the full cake tin to someone lovely</li>
-      </ol>
-    </strong>
-    </h4>
-    </div>
-    <div class="one column"><br /></div>
-    <div class="ten columns omega">
+    <div class="span5"><div class="span3 well">
+      <h3>Here's what to do</h3>
+      <strong>
+        <ol>
+          <li>Bake something and put it in the tin</li>
+          <li>Add details of what you made</li>
+          <li>Give the full cake tin to someone lovely</li>
+        </ol>
+      </strong>
+    </div></div>
+    <div class="span7">
       <%= render "holders/form" %>
     </div>
-    <hr />
   </div>
 <% end %>
 
-<div class="sixteen columns alpha">
-  <h2>History of the cake tin</h2>
-</div>
+<% unless @is_first_holder %>
+  <div class="row">
+    <h2>History of the cake tin</h2>
+  </div>
 
-<% @past_holders.each do |h| %>
-  <%= render :partial => "holders/show", :locals => { :holder => h } %>
+  <% @past_holders.each do |h| %>
+    <%= render :partial => "holders/show", :locals => { :holder => h } %>
+  <% end %>
 <% end %>
